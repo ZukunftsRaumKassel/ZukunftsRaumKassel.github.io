@@ -100,7 +100,7 @@ body {
   width: calc(100% + 14px + 77px);
   background: linear-gradient(to left, #eaeaea 0%, #C9C7C7 38px, #C9C7C7 38px);
 }
-
+/* Punkte */
 .timeline ol li::after {
   content: "";
   position: absolute;
@@ -110,7 +110,7 @@ body {
   height: 14px;
   transform: translate(-50%, -50%);
   border-radius: 50%;
-  background: #D76F84;
+  background: #922C7E;
   /*border: 1px solid #222;*/
 }
 
