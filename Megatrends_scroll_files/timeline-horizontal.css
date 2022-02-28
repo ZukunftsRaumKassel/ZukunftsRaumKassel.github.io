@@ -1,0 +1,224 @@
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+@font-face {
+  font-family: 'futuralight-condensed';
+  src: url('font/futura_light_font-webfont.woff2') format('woff2'), url('font/futura_light_font-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'futuralight';
+  src: url('font/futura_light_bt-webfont.woff2') format('woff2'), url('font/futura_light_bt-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'futuralight', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #EAEAEA;
+}
+
+/* .section SECTION
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.section {
+  padding: 50px 0;
+}
+
+.section .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline {
+  white-space: nowrap;
+  overflow-x: hidden;
+}
+
+.timeline ol {
+  display: flex;
+  font-size: 0;
+  width: 100vw;
+  height: 700px;
+  padding-top: 50px;
+  transition: all 1s;
+}
+
+.timeline ol li {
+  position: relative;
+  flex: 0 0 270px;
+  margin-top: 19px;
+  margin-left: 14px;
+  list-style-type: none;
+}
+
+.timeline ol li:first-of-type {
+  margin-left: 77px;
+}
+
+.timeline ol li:last-of-type {
+  margin-right: 77px;
+}
+
+.timeline ol li::before {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: 0;
+  width: calc(100% + 14px);
+  height: 3px;
+  transform: translateY(-50%);
+  background: #C9C7C7;
+}
+
+.timeline ol li:first-of-type::before {
+  left: -77px;
+  width: calc(100% + 14px + 77px);
+  background: linear-gradient(to right, #eaeaea 0%, #C9C7C7 38px, #C9C7C7 38px);
+}
+
+.timeline ol li:last-of-type::before {
+  width: calc(100% + 14px + 77px);
+  background: linear-gradient(to left, #eaeaea 0%, #C9C7C7 38px, #C9C7C7 38px);
+}
+
+.timeline ol li::after {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: #D76F84;
+  /*border: 1px solid #222;*/
+}
+
+.timeline ol li div {
+  padding: 16px;
+  font-size: 1rem;
+  white-space: normal;
+  color: #002625;
+  background: #C9C7C7;
+}
+
+.timeline time {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: normal;
+  margin-bottom: 16px;
+  color: #000;
+}
+
+.timeline ol li div h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.timeline ol li div p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 25;
+  /* number of lines to show */
+  -webkit-box-orient: vertical;
+  margin-bottom: 5px;
+}
+
+.timeline ol li div a {
+  display: none;
+  cursor: default;
+  color: #D76F84;
+}
+
+.timeline-header {
+  padding-left: 130px;
+  padding-top: 20px;
+  color: #002625;
+  font-size: 2rem;
+}
+
+/* TIMELINE ARROWS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline .arrows {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.timeline .arrows .arrow__prev {
+  margin-right: 20px;
+}
+
+.timeline .disabled {
+  opacity: 0.5;
+}
+
+.timeline .arrows img {
+  width: 45px;
+  height: 45px;
+}
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 599px) {
+  .timeline ol {
+    flex-direction: column;
+  }
+  .timeline ol li {
+    flex: auto;
+    width: 94%;
+    margin: auto;
+    margin-bottom: 25px;
+  }
+  .timeline ol li:first-of-type {
+    margin-top: 25px;
+    margin-left: auto;
+  }
+  .timeline ol li:last-of-type {
+    margin-right: auto;
+  }
+  .timeline ol li::before,
+  .timeline ol li:first-of-type::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 100%;
+    width: 1px;
+    height: 25px;
+    transform: translateX(-50%);
+    background: #002625;
+  }
+  .timeline ol li:last-of-type::before,
+  .timeline ol li::after {
+    display: none;
+  }
+  .timeline ol li div {
+    height: auto !important;
+  }
+  .timeline .arrows {
+    display: none;
+  }
+}
